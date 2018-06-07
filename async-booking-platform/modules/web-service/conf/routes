@@ -1,0 +1,14 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# An example controller showing a sample home page
+GET     /                           controllers.HomeController.index
+
+# Booking controller
+GET     /rooms                      controllers.BookingController.rooms(dateStr: String)
+GET     /availability               controllers.BookingController.availability(room: Int, dateStr: String)
+GET     /book                       controllers.BookingController.create(guest: String, room: Int, dateStr: String)
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(file)
